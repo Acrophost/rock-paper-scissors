@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+*, body, html {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: white;
+}
+
+body {
+    background: hsl(237, 49%, 15%);
+    background: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    width: 100%;
+    min-height: 100vh;
+}
+
+.app {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.header {
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.score {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+}
+
+.score__title {
+    color: hsla(229, 64%, 46%, 0.8);
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.score__value {
+    color: hsl(228, 20%, 38%);
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.rules-button {
+    position: absolute;
+    bottom: 2rem; 
+    right: 2rem;
+    padding: 0.5rem 3rem;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal__container {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+}
+
+.modal__title {
+    margin: 0 0 3rem 0;
+    color: hsl(229, 25%, 31%);
+}
+
+.modal__close {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+}
+
+.game {
+    position: absolute;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.option__ring {
+    background: white;
+    border-radius: 50%;
+    width: 7.5rem;
+    height: 7.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: inset 0px 8px 0px 0px rgb(221, 221, 221);
+}
+
+.option__icon {
+    position: absolute;
+}
+
+.rock {
+    background: linear-gradient(hsl(349, 70%, 56%), hsl(349, 71%, 52%));
+    box-shadow: 0px 8px 0px 0px hsl(349, 58%, 31%);
+    top: 9rem;
+    left: 4.5rem;
+}
+
+.paper {
+    background: linear-gradient(hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+    box-shadow: 0px 8px 0px 0px hsl(230, 56%, 50%);
+    top: -4rem;
+    left: -3rem;
+}
+
+.scissors {
+    background: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
+    box-shadow: 0px 8px 0px 0px hsl(39, 88%, 44%);
+    top: -4rem;
+    left: 12rem;
+}
+
+.result-1 {
+    width: 15rem;
+    height: 15rem;
+}
+
+.result-1 .option__ring {
+    width: 12rem;
+    height: 12rem;
+}
+
+.result-2 {
+    width: 15rem;
+    height: 15rem;
+}
+
+.result-2 .option__ring {
+    width: 12rem;
+    height: 12rem;
+}
+
+.empty.result-2 {
+    width: 12rem;
+    height: 12rem;
+    background: hsla(238, 40%, 15%, 0.603);
+}
+
+.empty.result-2 .option__ring {
+    width: 0;
+    height: 0;
+}
+
+.result-1 .option__icon, .result-2 .option__icon {
+    width: 45%;
+}
+
+.player-choice, .enemy-choice, .option.result-1, .option.result-2 {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.option.result-2.empty {
+    margin-top: 1.5rem;
+}
+
+.player-choice h2, .enemy-choice h2 {
+    margin: 5rem 0;
+}
+
+.player-choice, .enemy-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30rem;
+}
+
+.player-choice {
+    margin-right: 10rem;
+}

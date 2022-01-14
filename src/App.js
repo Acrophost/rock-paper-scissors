@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Modal from './components/Modal';
+import Header from './components/Header';
+import Game from './components/Game';
+import RulesButton from './components/RulesButton';
+import './styles/App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    if(!localStorage.getItem('score')) {
+      localStorage.setItem('score', 0);
+    }
+  }, []);
+
+  const [open, setOpen] = useState(false);
+  const [score, setScore] = useState(+localStorage.getItem('score'));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header score={score} />
+      <Game score={score} setScore={setScore} />
+      <RulesButton setOpen={setOpen} />
+      {open && <Modal setOpen={setOpen} />}
     </div>
   );
 }
