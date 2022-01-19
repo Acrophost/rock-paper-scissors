@@ -2,8 +2,11 @@ import Rock from '../images/icon-rock.svg';
 import Paper from '../images/icon-paper.svg';
 import Scissors from '../images/icon-scissors.svg';
 
-const Option = ({ disabled, variation, setClicked, result }) => {
+const Option = ({ disabled, variation, setClicked, result, winner }) => {
     let icon;
+
+    const isWinner = winner !== '' && ((winner === 'player' && result === 'result-1') || (winner === 'enemy' && result === 'result-2'));
+    const optionClass = `option ${variation} ${result !== '' ? result : ''}${isWinner ? ' winner' : ''}`;
 
     const handleClick = () => {
         setClicked(variation);
@@ -28,7 +31,7 @@ const Option = ({ disabled, variation, setClicked, result }) => {
     }
 
     return (
-        <button className={`option ${variation} ${result !== '' ? result : ''}`} onClick={handleClick} disabled={disabled}>
+        <button className={optionClass} onClick={handleClick} disabled={disabled}>
             <div className="option__ring">
                 {icon && <img src={icon} alt={variation} className="option__icon" />}
             </div>
