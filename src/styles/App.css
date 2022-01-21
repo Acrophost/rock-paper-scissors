@@ -81,7 +81,6 @@ body {
 }
 
 .modal__container {
-    position: absolute;
     background: white;
     border-radius: 20px;
     padding: 2rem;
@@ -112,7 +111,7 @@ body {
 
 .option {
     width: 10rem;
-    height: 10rem;
+    aspect-ratio: 1;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -128,7 +127,7 @@ body {
     background: white;
     border-radius: 50%;
     width: 7.5rem;
-    height: 7.5rem;
+    aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,33 +162,33 @@ body {
 
 .result-1 {
     width: 15rem;
-    height: 15rem;
+    aspect-ratio: 1;
 }
 
 .result-1 .option__ring {
     width: 12rem;
-    height: 12rem;
+    aspect-ratio: 1;
 }
 
 .result-2 {
     width: 15rem;
-    height: 15rem;
+    aspect-ratio: 1;
 }
 
 .result-2 .option__ring {
     width: 12rem;
-    height: 12rem;
+    aspect-ratio: 1;
 }
 
 .empty.result-2 {
     width: 12rem;
-    height: 12rem;
+    aspect-ratio: 1;
     background: hsla(238, 40%, 15%, 0.603);
 }
 
 .empty.result-2 .option__ring {
     width: 0;
-    height: 0;
+    aspect-ratio: 1;
 }
 
 .result-1 .option__icon, .result-2 .option__icon {
@@ -261,4 +260,154 @@ body {
             0 0 0 100px hsla(214, 47%, 23%, 0.8),
             0 0 0 150px hsla(214, 47%, 20%, 0.8);
     }
-  }
+}
+
+@media (max-width: 768px) {
+    *, * > * {
+        transition: all 1s;
+    }
+
+    .header {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    .header img {
+        width: 7rem;
+    }
+
+    .score {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .score__title {
+        font-size: 0.8rem;
+    }
+
+    .score__value {
+        font-size: 2rem;
+    }
+
+    .game {
+        width: 100%;
+        padding-top: 8rem;
+        flex-flow: row wrap;
+    }
+
+    .background-web {
+        width: 60%;
+    }
+
+    .option {
+        width: 7rem;
+    }
+
+    .option__ring {
+        width: 5.5rem;
+    }
+
+    .option__icon {
+        width: 45%;
+    }
+
+    .paper {
+        top: 5rem;
+        left: 3rem;
+    }
+
+    .scissors {
+        top: 5rem;
+        left: 13rem;
+    }
+
+    .rock {
+        top: 14rem;
+        left: 8rem;
+    }
+
+    .modal__container {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .modal__close {
+        position: relative;
+        order: 3;
+        top: unset;
+        right: unset;
+    }
+
+    .player-choice, .enemy-choice {
+        height: 11rem;
+        width: 50%;
+    }
+
+    .player-choice h2, .enemy-choice h2 {
+        margin: 2rem 0 0 0;
+        font-size: 1rem;
+        order: 2;
+    }
+
+    .player-choice, .enemy-choice, .option.result-1, .option.result-2 {
+        top: 0;
+        left: 0;
+    }
+
+    .result-1 .option__ring {
+        width: 5.5rem;
+    }
+
+    .mid-gap {
+        min-width: 4rem;
+        order: 2;
+    }
+
+    .option.result-2.empty {
+        margin-top: 0.5rem;
+    }
+
+    .empty.result-2 {
+        width: 6.5rem;
+    }
+
+    .result-2 .option__ring {
+        width: 5.5rem;
+    }
+
+    @keyframes winner-joy {
+        0% {
+            box-shadow: none;
+        }
+        100% {
+            box-shadow:
+                0 0 0 20px hsla(214, 47%, 26%, 0.8),
+                0 0 0 50px hsla(214, 47%, 23%, 0.8),
+                0 0 0 70px hsla(214, 47%, 20%, 0.8);
+        }
+    }
+
+    .result-message {
+        padding: 0 4rem;
+    }
+
+    .message-text {
+        font-size: 3rem;
+        margin: 1rem 0;
+    }
+
+    .back-button {
+        padding: 1rem 0;
+        color: hsl(228, 20%, 38%);
+        font-size: 1rem;
+    }
+
+    .rules-button {
+        text-align: center;
+        right: unset;
+    }
+}
