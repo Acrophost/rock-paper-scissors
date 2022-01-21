@@ -1,16 +1,17 @@
 import Rock from '../images/icon-rock.svg';
 import Paper from '../images/icon-paper.svg';
 import Scissors from '../images/icon-scissors.svg';
+import Lizard from '../images/icon-lizard.svg';
+import Spock from '../images/icon-spock.svg';
 
-const Option = ({ disabled, variation, setClicked, result, winner }) => {
+const Option = ({ disabled, variation, setClicked, result, winner, bonus }) => {
     let icon;
 
     const isWinner = winner !== '' && ((winner === 'player' && result === 'result-1') || (winner === 'enemy' && result === 'result-2'));
-    const optionClass = `option ${variation} ${result !== '' ? result : ''}`;
+    const optionClass = `option ${variation} ${result !== '' ? result : ''} ${bonus ? 'bonus' : ''}`;
 
     const handleClick = () => {
         setClicked(variation);
-        console.log(variation);
     };
 
     switch (variation) {
@@ -24,6 +25,14 @@ const Option = ({ disabled, variation, setClicked, result, winner }) => {
 
         case 'scissors':
             icon = Scissors;
+            break;
+
+        case 'lizard':
+            icon = Lizard;
+            break;
+
+        case 'spock':
+            icon = Spock;
             break;
     
         default:

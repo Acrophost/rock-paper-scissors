@@ -3,13 +3,13 @@ import Board from './Board';
 import Result from './Result';
 
 
-const Game = ({ score, setScore }) => {
+const Game = ({ score, setScore, bonus }) => {
     const [clicked, setClicked] = useState('');
 
     return (
-        <main className="game">
+        <main className={`game ${bonus ? 'bonus' : ''}`}>
             {clicked === '' ?
-            <Board setClicked={setClicked} /> : <Result setClicked={setClicked} clicked={clicked} setScore={setScore} score={score} />}
+            <Board setClicked={setClicked} bonus={bonus} /> : <Result setClicked={setClicked} clicked={clicked} setScore={setScore} score={score} bonus={bonus} />}
         </main>
     );
 }

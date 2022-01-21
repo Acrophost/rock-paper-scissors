@@ -67,6 +67,10 @@ body {
     cursor: pointer;
 }
 
+.modal__rules-image.bonus {
+    padding-bottom: 2rem;
+}
+
 .modal {
     width: 100%;
     height: 100%;
@@ -107,6 +111,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.game.bonus {
+    margin-top: 7rem;
+}
+
+.background-web.bonus {
+    width: 24rem;
 }
 
 .option {
@@ -161,6 +173,41 @@ body {
     box-shadow: 0px 8px 0px 0px hsl(39, 88%, 44%);
     top: -4rem;
     left: 12rem;
+}
+
+.rock.bonus {
+    top: 16rem;
+    left: 14rem;
+}
+
+.paper.bonus {
+    top: 3rem;
+    left: 18rem;
+}
+
+.scissors.bonus {
+    top: -4rem;
+    left: 7rem;
+}
+
+.lizard, .spock {
+    display: none;
+}
+
+.lizard.bonus {
+    display: flex;
+    background: linear-gradient(hsl(261, 72%, 63%), hsl(261, 73%, 60%));
+    box-shadow: 0px 8px 0px 0px hsl(261, 74%, 57%);
+    top: 16rem;
+    left: 0;
+}
+
+.spock.bonus {
+    display: flex;
+    background: linear-gradient(hsl(189, 58%, 57%), hsl(189, 59%, 53%));
+    box-shadow: 0px 8px 0px 0px hsl(189, 60%, 49%);
+    top: 3rem;
+    left: -4rem;
 }
 
 .result-1 {

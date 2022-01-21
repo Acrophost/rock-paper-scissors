@@ -2,8 +2,9 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import Cross from '../images/icon-close.svg';
 import Rules from '../images/image-rules.svg';
+import BonusRules from '../images/image-rules-bonus.svg';
 
-const Modal = ({ setOpen }) => {
+const Modal = ({ setOpen, bonus }) => {
     const handleClose = () => {
         setOpen(false);
     };
@@ -20,9 +21,9 @@ const Modal = ({ setOpen }) => {
                 </button>
                 <h2 className="modal__title">RULES</h2>
                 <img 
-                    src={Rules} 
+                    src={bonus ? BonusRules : Rules} 
                     alt="scissors beat paper, paper beats rock, rock beats scissors"
-                    className="modal__rules-image"
+                    className={`modal__rules-image${bonus ? ' bonus' : ''}`}
                 />
             </section>
         </div>,

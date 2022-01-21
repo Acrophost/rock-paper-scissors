@@ -3,14 +3,14 @@ import Option from './Option';
 import Message from './Message';
 import { calculateResult, getRandomSign } from '../util/gameUtils';
 
-const Result = ({ setClicked, clicked, setScore, score }) => {
+const Result = ({ setClicked, clicked, setScore, score, bonus }) => {
     const [enemy, setEnemy] = useState('empty');
     const [show, setShow] = useState(false);
     const [winner, setWinner] = useState('');
 
     useEffect(() => {
         setTimeout(() => {
-            const enemyMove = getRandomSign();
+            const enemyMove = getRandomSign(bonus);
             setEnemy(enemyMove);
             const result = calculateResult(clicked, enemyMove);
             setScore(score + result);
@@ -27,14 +27,14 @@ const Result = ({ setClicked, clicked, setScore, score }) => {
         <>
             <div className="player-choice">
                 <h2>YOU PICKED</h2>
-                <Option variation={clicked} setClicked={setClicked} disabled={'disabled'} result="result-1" winner={winner} />
+                <Option variation={clicked} setClicked={setClicked} disabled={'disabled'} result="result-1" winner={winner} bonus={bonus} />
             </div>
             <div className='mid-gap'>
                 {show && <Message gameResult={calculateResult(clicked, enemy)} setClicked={setClicked} />}
             </div>
             <div className="enemy-choice">
                 <h2>THE HOUSE PICKED</h2>
-                <Option variation={enemy} setClicked={setClicked} disabled={'disabled'} result="result-2" winner={winner} />
+                <Option variation={enemy} setClicked={setClicked} disabled={'disabled'} result="result-2" winner={winner} bonus={bonus} />
             </div>
         </>
     )

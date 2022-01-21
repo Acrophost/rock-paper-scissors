@@ -14,13 +14,14 @@ function App() {
 
   const [open, setOpen] = useState(false);
   const [score, setScore] = useState(+localStorage.getItem('score'));
+  const [bonus, setBonus] = useState(false);
 
   return (
     <div className="app">
-      <Header score={score} />
-      <Game score={score} setScore={setScore} />
+      <Header score={score} bonus={bonus} setBonus={setBonus} setScore={setScore} />
+      <Game score={score} setScore={setScore} bonus={bonus} />
       <RulesButton setOpen={setOpen} />
-      {open && <Modal setOpen={setOpen} />}
+      {open && <Modal setOpen={setOpen} bonus={bonus} />}
     </div>
   );
 }
