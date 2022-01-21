@@ -6,7 +6,7 @@ const Option = ({ disabled, variation, setClicked, result, winner }) => {
     let icon;
 
     const isWinner = winner !== '' && ((winner === 'player' && result === 'result-1') || (winner === 'enemy' && result === 'result-2'));
-    const optionClass = `option ${variation} ${result !== '' ? result : ''}${isWinner ? ' winner' : ''}`;
+    const optionClass = `option ${variation} ${result !== '' ? result : ''}`;
 
     const handleClick = () => {
         setClicked(variation);
@@ -31,11 +31,13 @@ const Option = ({ disabled, variation, setClicked, result, winner }) => {
     }
 
     return (
-        <button className={optionClass} onClick={handleClick} disabled={disabled}>
-            <div className="option__ring">
-                {icon && <img src={icon} alt={variation} className="option__icon" />}
-            </div>
-        </button>
+        <div className={isWinner ? ' winner' : ''}>
+            <button className={optionClass} onClick={handleClick} disabled={disabled}>
+                <div className="option__ring">
+                    {icon && <img src={icon} alt={variation} className="option__icon" />}
+                </div>
+            </button>
+        </div>
     );
 };
 
