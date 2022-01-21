@@ -121,6 +121,7 @@ body {
     position: absolute;
     overflow: hidden;
     cursor: pointer;
+    transition: all 1s;
 }
 
 .option__ring {
@@ -133,10 +134,12 @@ body {
     align-items: center;
     position: relative;
     box-shadow: inset 0px 8px 0px 0px rgb(221, 221, 221);
+    transition: all 1s;
 }
 
 .option__icon {
     position: absolute;
+    transition: all 1s;
 }
 
 .rock {
@@ -219,7 +222,7 @@ body {
 }
 
 .mid-gap {
-    min-width: 10rem;
+    min-width: 17rem;
     z-index: 3;
 }
 
@@ -263,10 +266,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    *, * > * {
-        transition: all 1s;
-    }
-
     .header {
         padding: 1rem;
         width: 95%;
