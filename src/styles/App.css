@@ -28,6 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 40%;
+    z-index: 8;
 }
 
 .score {
@@ -194,7 +195,7 @@ body {
     display: none;
 }
 
-.lizard.bonus {
+.lizard.bonus, .lizard.result-1, .lizard.result-2 {
     display: flex;
     background: linear-gradient(hsl(261, 72%, 63%), hsl(261, 73%, 60%));
     box-shadow: 0px 8px 0px 0px hsl(261, 74%, 57%);
@@ -202,7 +203,7 @@ body {
     left: 0;
 }
 
-.spock.bonus {
+.spock.bonus, .spock.result-1, .spock.result-2 {
     display: flex;
     background: linear-gradient(hsl(189, 58%, 57%), hsl(189, 59%, 53%));
     box-shadow: 0px 8px 0px 0px hsl(189, 60%, 49%);
@@ -344,6 +345,14 @@ body {
         width: 60%;
     }
 
+    .game.bonus {
+        margin-top: 0;
+    }
+    
+    .background-web.bonus {
+        width: 85%;
+    }
+
     .option {
         width: 7rem;
     }
@@ -369,6 +378,31 @@ body {
     .rock {
         top: 14rem;
         left: 8rem;
+    }
+
+    .paper.bonus {
+        top: 12rem;
+        left: 16rem;
+    }
+
+    .scissors.bonus {
+        top: 6rem;
+        left: 9rem;
+    }
+
+    .rock.bonus {
+        top: 22rem;
+        left: 13rem;
+    }
+
+    .lizard.bonus {
+        top: 22rem;
+        left: 3rem;
+    }
+
+    .spock.bonus {
+        top: 12rem;
+        left: 1rem;
     }
 
     .modal__container {
